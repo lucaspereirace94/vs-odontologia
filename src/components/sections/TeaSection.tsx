@@ -53,14 +53,14 @@ export default function TeaSection() {
                 </p>
               </div>
               
-              {/* Quando tiver a imagem real, descomente o bloco abaixo e apague o placeholder acima:
+              Quando tiver a imagem real, descomente o bloco abaixo e apague o placeholder acima:
               <Image
                 src="/images/tea-ambiente.webp"
                 alt="Ambiente adaptado e acolhedor para atendimento de crianças com TEA"
                 fill
                 className="object-cover"
               />
-              */}
+              
             </div>
             <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-dourado-claro/40 rounded-full -z-10" />
             <div className="absolute -top-4 -left-4 w-32 h-32 border-4 border-azul-pastel/40 rounded-2xl -z-10" />

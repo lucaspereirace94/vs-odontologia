@@ -19,7 +19,7 @@ const galleryImages = [
     id: 3,
     title: "Consultório Odontológico",
     description: "Equipamentos modernos e higienizados",
-    placeholder: "public/images/consultorio-01.webp",
+    placeholder: "public/images/consultorio-01.png",
     aspect: "aspect-[4/3]"
   },
   {
@@ -76,14 +76,14 @@ export default function Gallery() {
                   </p>
                 </div>
 
-                {/* Quando tiver a imagem real, descomente o bloco abaixo e apague o placeholder acima:
+                 Quando tiver a imagem real, descomente o bloco abaixo e apague o placeholder acima:
                 <Image
                   src={image.placeholder.replace('public', '')}
                   alt={image.description}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                */}
+                
               </div>
               
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-azul-profundo/80 to-transparent p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

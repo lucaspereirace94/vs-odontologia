@@ -20,14 +20,14 @@ export default function AboutDentist() {
                 </p>
               </div>
 
-              {/* Quando tiver a imagem real, descomente o bloco abaixo e apague o placeholder acima:
+               Quando tiver a imagem real, descomente o bloco abaixo e apague o placeholder acima:
               <Image
                 src="/images/dentista-perfil.webp"
                 alt={`Dra. ${clinicConfig.professional.name}, Odontopediatra`}
                 fill
                 className="object-cover"
               />
-              */}
+              
             </div>
             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-dourado-suave/20 rounded-full -z-10" />
           </div>

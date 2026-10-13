@@ -27,7 +27,7 @@ export default function Header() {
           {/* Logotipo */}
           <Link href="#inicio" className="flex-shrink-0">
             <Image
-              src="/brand/logo.svg"
+              src="/brand/logo.png"
               alt={`Logotipo ${clinicConfig.name}`}
               width={180}
               height={54}

@@ -1,7 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { clinicConfig } from '@/config/clinic';
-
+import Image from 'next/image';
 export default function Hero() {
   const whatsappUrl = `https://wa.me/${clinicConfig.contact.whatsappNumber}?text=${encodeURIComponent('Olá! Gostaria de agendar uma avaliação na VS Odontologia.')}`;
 
@@ -70,15 +69,16 @@ export default function Hero() {
                 </p>
               </div>
               
-              {/* Descomente e use este bloco quando tiver a imagem real:
+               Descomente e use este bloco quando tiver a imagem real:
               <Image
-                src="/images/hero-dentista.webp"
+                src="/images/hero.webp" /* <-- ATUALIZE PARA O NOME EXATO DO SEU ARQUIVO */
                 alt="Dra. Valessa Sabino atendendo uma criança com acolhimento no consultório"
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover"
                 priority
               />
-              */}
+            
             </div>
             
             {/* Detalhe decorativo dourado */}

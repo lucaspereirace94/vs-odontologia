@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Paleta de Cores VS Odontologia */
+  --color-azul-claro: #DCECF7;
+  --color-azul-pastel: #B8D7E8;
+  --color-azul-medio: #78A8C6;
+  --color-azul-profundo: #24465D;
+  --color-branco: #FFFFFF;
+  --color-off-white: #FAFBFD;
+  --color-dourado-suave: #C6A66B;
+  --color-dourado-claro: #E8D9BA;
+  --color-cinza-azulado: #687985;
+
+  /* Fontes */
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--color-off-white);
+    --foreground: var(--color-azul-profundo);
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .container-custom {
+    width: 100%;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .container-custom {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container-custom {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-azul-profundo);
+    color: var(--color-branco);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-azul-medio);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  }
+
+  .btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-off-white), 0 0 0 4px var(--color-dourado-suave);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--color-azul-profundo);
+    color: var(--color-azul-profundo);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-azul-claro);
+    border-color: var(--color-azul-medio);
+  }
+
+  .btn-secondary:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-off-white), 0 0 0 4px var(--color-dourado-suave);
+  }
 }

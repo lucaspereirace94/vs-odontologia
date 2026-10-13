@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="none" width="200" height="60">
+  <!-- Símbolo: Dente estilizado com curva de sorriso/acolhimento -->
+  <path d="M30 15 C30 5, 45 5, 45 15 C45 25, 40 35, 37.5 45 C35 55, 25 55, 22.5 45 C20 35, 15 25, 15 15 C15 5, 30 5, 30 15 Z" fill="#24465D"/>
+  <path d="M22.5 25 C25 30, 35 30, 37.5 25" stroke="#C6A66B" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="30" cy="18" r="2" fill="#C6A66B"/>
+  
+  <!-- Texto: VS Odontologia -->
+  <text x="55" y="28" font-family="Outfit, sans-serif" font-size="22" font-weight="700" fill="#24465D" letter-spacing="-0.5">VS</text>
+  <text x="55" y="46" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#687985" letter-spacing="1.5">ODONTOLOGIA</text>
+</svg>

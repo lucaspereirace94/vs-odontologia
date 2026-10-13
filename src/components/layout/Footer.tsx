@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="container-custom">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div className="space-y-4">
-            <Image src="/brand/logo.svg" alt={`Logotipo ${clinicConfig.name}`} width={180} height={54} className="brightness-0 invert" />
+            <Image src="/brand/logo.png" alt={`Logotipo ${clinicConfig.name}`} width={180} height={54} className="brightness-0 invert" />
             <p className="text-white/80 text-sm leading-relaxed">
               Odontopediatria humanizada e especializada em atendimento de crianças com TEA em Fortaleza - CE.
             </p>

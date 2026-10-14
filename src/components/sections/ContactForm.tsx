@@ -19,6 +19,19 @@ interface FormErrors {
   [key: string]: string;
 }
 
+// Função para formatar o telefone com máscara (XX) XXXXX-XXXX
+const formatPhone = (value: string) => {
+  const numbers = value.replace(/\D/g, ''); // Remove tudo que não é número
+  
+  if (numbers.length <= 2) {
+    return numbers.replace(/^(\d{0,2})/, '($1');
+  } else if (numbers.length <= 7) {
+    return numbers.replace(/^(\d{2})(\d{0,5})/, '($1) $2');
+  } else {
+    return numbers.replace(/^(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3').substring(0, 15);
+  }
+};
+
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     responsibleName: '',
@@ -43,8 +56,8 @@ export default function ContactForm() {
 
     if (!formData.phone.trim()) {
       newErrors.phone = 'Telefone é obrigatório';
-    } else if (!/^\(\d{2}\)\s?\d{4,5}-?\d{4}$/.test(formData.phone)) {
-      newErrors.phone = 'Telefone inválido. Use o formato: (85) 99999-9999';
+    } else if (!/^\(\d{2}\)\s\d{5}-\d{4}$/.test(formData.phone)) {
+      newErrors.phone = 'Telefone inválido. Use o formato: (XX) XXXXX-XXXX';
     }
 
     if (!formData.service) {
@@ -86,7 +99,7 @@ _Enviado pelo site vsodontologia.com.br_`;
     
     setIsSubmitted(true);
     
-    // Reset do formulário após 3 segundos
+    // Reset do formulário após 5 segundos
     setTimeout(() => {
       setFormData({
         responsibleName: '',
@@ -104,7 +117,14 @@ _Enviado pelo site vsodontologia.com.br_`;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    
+    // Aplica a máscara se o campo for o telefone
+    let formattedValue = value;
+    if (name === 'phone') {
+      formattedValue = formatPhone(value);
+    }
+
+    setFormData(prev => ({ ...prev, [name]: formattedValue }));
     
     // Limpa o erro do campo quando o usuário começa a digitar
     if (errors[name]) {
@@ -170,7 +190,7 @@ _Enviado pelo site vsodontologia.com.br_`;
             )}
           </div>
 
-          {/* Telefone */}
+          {/* Telefone com Máscara */}
           <div>
             <label htmlFor="phone" className="block text-sm font-semibold text-azul-profundo mb-2">
               Telefone / WhatsApp *
@@ -181,10 +201,11 @@ _Enviado pelo site vsodontologia.com.br_`;
               name="phone"
               value={formData.phone}
               onChange={handleChange}
+              maxLength={15} // Limita ao tamanho máximo da máscara: (XX) XXXXX-XXXX
               className={`w-full px-4 py-3 rounded-lg border ${
                 errors.phone ? 'border-red-500' : 'border-azul-claro'
               } focus:outline-none focus:ring-2 focus:ring-azul-medio transition-colors`}
-              placeholder="(85) 99999-9999"
+              placeholder="(XX) XXXXX-XXXX"
             />
             {errors.phone && (
               <p className="text-red-500 text-sm mt-1">{errors.phone}</p>

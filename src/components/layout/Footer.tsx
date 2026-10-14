@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Coluna 1: Logo e Descrição */}
           <div className="space-y-4">
             <Image
-              src="/brand/logo.svg"
+              src="/brand/logo.png"
               alt={`Logotipo ${clinicConfig.name}`}
               width={180}
               height={54}

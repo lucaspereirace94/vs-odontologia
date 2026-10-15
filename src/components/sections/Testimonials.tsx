@@ -29,7 +29,7 @@ const testimonials = [
 export default function Testimonials() {
   // Link direto para os depoimentos no Google Maps da clínica
   // SUBSTITUA pelo link real do perfil da VS Odontologia no Google
-  const googleReviewsUrl = "https://search.google.com/local/writereview?placeid=ChIJwS7rUQBPxwcRZjifGXvWfHQ"; 
+  const googleReviewsUrl = "https://www.google.com/searchviewer/10?output=search&svid=CAwSKRInCgNwdnESIE9oWXdlREE2TUhnM05EZGpaRFkzWWpFNU9XWXpPRFkyGAo&hl=pt&gl=BR"; 
 
   return (
     <section className="py-20 bg-azul-claro/20">

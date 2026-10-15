@@ -1,30 +1,36 @@
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
+// SUBSTITUA estes dados pelos depoimentos reais copiados do Google da clínica
 const testimonials = [
   {
     id: 1,
-    name: "Maria S.",
-    role: "Mãe do Pedro, 5 anos",
-    text: "A Dra. Valessa tem uma paciência incrível. Meu filho tinha medo de dentista, mas agora adora ir ao consultório. O atendimento é diferenciado!",
+    name: "Juliana Gomes", // Nome de quem escreveu no Google
+    role: "Mãe do Gustavo, 7 anos", // Ex: Pai da Ana, 7 anos
+    text: "Ótima localização e ambiente acolhedor. Dra Valessa, um amor de pessoa, ótima profissional e atenciosa demais. Sem dúvidasa, a melhor Dentista.",
     rating: 5
   },
   {
     id: 2,
-    name: "Carlos R.",
-    role: "Pai da Sofia, 7 anos",
-    text: "Minha filha é autista e sempre tivemos dificuldade em encontrar profissionais preparados. Na VS Odontologia, ela se sentiu acolhida desde a primeira consulta.",
+    name: "Mirlene Fernandes", 
+    role: "Mamãe de 2 crianças, uma delas com autismo",
+    text: "Maravilhosa! Super atenciosa e paciente com os pequenos. Levei minhas duas filhas, uma delas com autismo, e foi simplesmente incrível. Não teve choro, nem gritos...somente acolhimento e muitos risos.",
     rating: 5
   },
   {
     id: 3,
-    name: "Ana L.",
-    role: "Mãe do Lucas, 4 anos",
-    text: "O consultório é lindo e a equipe muito atenciosa. As orientações de higiene bucal foram super úteis e o Lucas aprendeu brincando.",
+    name: "Samuel Helyonai", 
+    role: "",
+    text: "Simplesmente amei. Atendimento de qualidade, profissional qualificada Ambiente aconchegante. Recomendo.",
     rating: 5
   }
 ];
 
 export default function Testimonials() {
+  // Link direto para os depoimentos no Google Maps da clínica
+  // SUBSTITUA pelo link real do perfil da VS Odontologia no Google
+  const googleReviewsUrl = "https://search.google.com/local/writereview?placeid=ChIJwS7rUQBPxwcRZjifGXvWfHQ"; 
+
   return (
     <section className="py-20 bg-azul-claro/20">
       <div className="container-custom">
@@ -38,18 +44,15 @@ export default function Testimonials() {
           <p className="text-cinza-azulado text-lg">
             A confiança dos pais é o nosso maior reconhecimento.
           </p>
-          <p className="text-xs text-cinza-azulado/70 mt-4 italic">
-            * Depoimentos demonstrativos. Substitua por relatos reais autorizados antes da publicação.
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8 mb-12">
           {testimonials.map((testimonial) => (
             <div 
               key={testimonial.id} 
-              className="bg-white p-8 rounded-2xl shadow-sm border border-azul-claro/50 relative"
+              className="bg-white p-8 rounded-2xl shadow-sm border border-azul-claro/50 relative flex flex-col"
             >
-              <Quote className="absolute top-6 right-6 w-8 h-8 text-dourado-claro/50" />
+              <Quote className="absolute top-6 right-6 w-8 h-8 text-dourado-claro/40" />
               
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -57,17 +60,31 @@ export default function Testimonials() {
                 ))}
               </div>
               
-              <p className="text-cinza-azulado leading-relaxed mb-6 italic">
-               &ldquo;{testimonial.text}&rdquo;
+              <p className="text-cinza-azulado leading-relaxed mb-6 italic flex-grow">
+                "{testimonial.text}"
               </p>
               
-              <div className="border-t border-azul-claro pt-4">
+              <div className="border-t border-azul-claro pt-4 mt-auto">
                 <p className="font-display font-semibold text-azul-profundo">{testimonial.name}</p>
                 <p className="text-sm text-cinza-azulado">{testimonial.role}</p>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Botão para ver mais no Google (Gera muita credibilidade) */}
+        <div className="text-center">
+          <a 
+            href={googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-azul-profundo font-semibold hover:text-dourado-suave transition-colors border-b-2 border-dourado-suave/30 hover:border-dourado-suave pb-1"
+          >
+            Ver todos os depoimentos no Google
+            <ExternalLink className="w-4 h-4" />
+          </a>
+        </div>
+
       </div>
     </section>
   );

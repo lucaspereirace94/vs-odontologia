@@ -26,7 +26,7 @@ const galleryImages = [
     id: 4,
     title: "Ambiente Infantil",
     description: "Espaço lúdico e acolhedor para crianças",
-    placeholder: "public/images/ambiente-infantil.png",
+    placeholder: "public/images/ambiente-infantil.webp",
     aspect: "aspect-square"
   },
   {

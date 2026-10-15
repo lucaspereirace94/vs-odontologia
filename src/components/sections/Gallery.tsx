@@ -3,10 +3,10 @@ import Image from 'next/image';
 const galleryImages = [
   {
     id: 1,
-    title: "Fachada da Clínica",
-    description: "Entrada acolhedora da VS Odontologia",
+    title: "Venha nos visitar",
+    description: "VS Odontologia",
     placeholder: "public/images/fachada.webp",
-    aspect: "aspect-[4/3]"
+    aspect: "aspect-square"
   },
   {
     id: 2,
@@ -19,14 +19,14 @@ const galleryImages = [
     id: 3,
     title: "Consultório Odontológico",
     description: "Equipamentos modernos e higienizados",
-    placeholder: "public/images/consultorio-01.png",
-    aspect: "aspect-[4/3]"
+    placeholder: "public/images/consultorio-02.webp",
+    aspect: "aspect-square"
   },
   {
     id: 4,
     title: "Ambiente Infantil",
     description: "Espaço lúdico e acolhedor para crianças",
-    placeholder: "public/images/ambiente-infantil.webp",
+    placeholder: "public/images/ambiente-infantil.png",
     aspect: "aspect-square"
   },
   {
@@ -34,13 +34,13 @@ const galleryImages = [
     title: "Detalhes da Decoração",
     description: "Cuidado em cada elemento",
     placeholder: "public/images/detalhes.webp",
-    aspect: "aspect-[4/3]"
+    aspect: "aspect-square"
   },
   {
     id: 6,
     title: "Estrutura Completa",
     description: "Consultório preparado para atendimento humanizado",
-    placeholder: "public/images/consultorio-02.webp",
+    placeholder: "public/images/consultorio-01.webp",
     aspect: "aspect-square"
   }
 ];

@@ -51,9 +51,7 @@ export default function AboutDentist() {
               <p>
                 Especializada em criar vínculos positivos com seus pequenos pacientes, ela entende que cada criança possui um ritmo único. Seu compromisso é oferecer um atendimento que respeita a individualidade, especialmente no cuidado com crianças que demandam uma abordagem mais sensível, como no espectro autista.
               </p>
-              <p className="text-sm italic bg-azul-claro/40 p-4 rounded-lg border-l-4 border-dourado-suave">
-                <strong>Nota para edição:</strong> Este texto é um placeholder profissional. Substitua pelos dados reais de formação acadêmica, especializações e filosofia de atendimento da profissional.
-              </p>
+              
             </div>
 
             <div className="pt-4">
